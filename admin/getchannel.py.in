@@ -38,7 +38,7 @@ import time
 import platform
 import argparse
 from xml.etree import ElementTree
-from packaging.version import Version
+from packaging.version import parse as parse_version
 
 #################################
 # BEGIN CONFIGURATION SECTION
@@ -76,8 +76,8 @@ options = cmdlineparser.parse_args()
 #
 python_version=platform.python_version()
 
-if Version(python_version) >= Version(py_version_require):
-    if options.DEBUG: print( 'Python Version Check: ' + str(python_version) + ' OK')
+if parse_version(python_version) >= parse_version(py_version_require):
+    if options.DEBUG: print( f"Python Version Check: {python_version} OK")
 else:
     print(f"{sys.argv[0]}: Error, need more current Python version, require version: {py_version_require} or newer")
     print(f"{sys.argv[0]}: Exiting ...")
@@ -262,7 +262,7 @@ for i in range(num_chan):
        # and give an appropriate error in the response, so this
        # check may not be necessary any longer, but it hurts nothing
 #       if returned_callsign == None:
-#           print '*** No record found for', options.callsign
+#           print(f"*** No record found for {options.callsign}")
 #           sys.exit(2)
 
 

@@ -204,7 +204,7 @@ if json_dict.get('ResponseStatus'):
     print(f"ResponseStatus not NULL: {json_dict['ResponseStatus']}")
     sys.exit(1)
 else:
-    if options.DEBUG: print('ResponseStatus is NULL: ', json_dict['ResponseStatus'])
+    if options.DEBUG: print(f"ResponseStatus is NULL: {json_dict.get('ResponseStatus')}")
 
 #
 # display the returned data

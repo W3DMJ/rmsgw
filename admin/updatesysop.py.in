@@ -202,7 +202,7 @@ for sysop in sysops.findall('sysop'):
     json_dict = json.loads(response.text)
 
     # print the return code of this request, should be 200 which is "OK"
-    if options.DEBUG: print( "Request status code: " + str(response.status_code))
+    if options.DEBUG: print(f"Request status code: {response.status_code}")
     if options.DEBUG: print(f"Debug: Response = {response.content}")
     if options.DEBUG: print( "Debug: Content type: " + response.headers['content-type'])
 
@@ -212,7 +212,7 @@ for sysop in sysops.findall('sysop'):
     if response.ok:
         if options.DEBUG: print( "Updatesysop for ", callsign, " Good Request status code")
     else:
-        print( f"{sys.argv[0]} *** Sysop update for {callsign} failed, ErrorCode ={str(response.status_code)}")
+        print( f"{sys.argv[0]} *** Sysop update for {callsign} failed, ErrorCode ={response.status_code}")
         print( sys.argv[0] + ' *** Error code:    ' + json_dict['ResponseStatus']['ErrorCode'])
         print( sys.argv[0] + ' *** Error message: ' + json_dict['ResponseStatus']['Message'])
         errors += 1
@@ -224,8 +224,8 @@ for sysop in sysops.findall('sysop'):
         print( f"ResponseStatus not NULL: {json_dict['ResponseStatus']}")
         errors += 1
     else:
-        if options.DEBUG: print( f"ResponseStatus is NULL: {json_dict['ResponseStatus']}")
-        print( 'Sysop update for {} successful.'.format(callsign))
+        if options.DEBUG: print( f"ResponseStatus is NULL: {json_dict.get('ResponseStatus')}")
+        print( f"Sysop update for {callsign} successful.")
 
 if errors > 0:
     sys.exit(1)
