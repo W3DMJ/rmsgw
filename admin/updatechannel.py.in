@@ -64,14 +64,14 @@ cmdlineparser.add_argument(
     default=False,
     help="turn on debug output"
 )
+cmdlineparser.add_argument(
+    "-c", "--callsign",
+    metavar="CALLSIGN",
+    dest="callsign",
+    help="Use a specific callsign."
+)
 
-args = cmdlineparser.parse_args()
-
-class Options:
-    DEBUG = args.DEBUG
-    callsign = getattr(args, "callsign", None)  # or set later from config
-
-options = Options()
+options = cmdlineparser.parse_args()
 
 errors = 0
 
