@@ -48,6 +48,8 @@ static char svnid[] = "$Id: getchan.c 149 2013-07-03 02:01:55Z eckertb $";
 
 #define BIGBUF	2048
 
+extern int varsubst(Symbol *symtab, char *cbuf, char *rbuf);
+
 static char *chanfile = XMLCHANNELFILE;
 static xmlDocPtr doc = NULL;
 static xmlNode *root = NULL;

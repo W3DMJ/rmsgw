@@ -33,6 +33,9 @@ static char svnid[] = "$Id";
 #endif /* lint */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
 #include "rmslib.h"
 
 

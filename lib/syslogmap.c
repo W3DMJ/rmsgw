@@ -37,7 +37,7 @@ static char svnid[] = "$Id: syslogmap.c 167 2014-09-30 10:27:26Z eckertb $";
 
 #define SYSLOG_NAMES	1
 #include <syslog.h>
-
+#include <string.h>
 #include "rmslib.h"
 
 /***

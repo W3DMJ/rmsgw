@@ -34,10 +34,11 @@ static char svnid[] = "$Id: statblock.c 109 2009-08-10 08:31:14Z eckertb $";
 #include <syslog.h>
 #include <errno.h>
 #include <memory.h>
-
 #include <sys/types.h>
 #include <sys/stat.h>
-
+#include <time.h>
+#include <unistd.h>
+ 
 #include "rms.h"
 #include "rmslib.h"
 #include "rmsshm.h"

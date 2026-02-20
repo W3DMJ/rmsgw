@@ -50,7 +50,8 @@ static char svnid[] = "$Id: wl2k_aci.c 176 2014-10-27 09:07:54Z eckertb $";
  * externs
  */
 extern char *active_configfile;
-
+extern int sendChannel(config *cfg, channel *chnl);
+extern int setstatfile(char *statfile);
 
 /*
  * structure for channel ACI statistics reporting

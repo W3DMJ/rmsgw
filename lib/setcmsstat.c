@@ -42,6 +42,7 @@ static char svnid[] = "$Id: setcmsstat.c 131 2011-11-28 19:31:57Z eckertb $";
 #include "rms.h"
 #include "rmslib.h"
 
+extern int setstatfile(char *statfile);
 
 /***
  *  setcmsstat(cmsnode)

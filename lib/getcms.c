@@ -37,8 +37,9 @@ static char	svnid[] = "$Id: getcms.c 167 2014-09-30 10:27:26Z eckertb $";
 #endif
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
-
+#include <ctype.h>
 #include "rmslib.h"
 
 #define BUFSIZE	2048	/* size of buffer for reading cms host file */
