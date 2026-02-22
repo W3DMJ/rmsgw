@@ -69,7 +69,7 @@ char *strtrim(char *d, char *s, char *trim_chars, int trim)
       * there)
       */
      if (trim >= 0) {
-	  register c;
+	  register char c;
 	  register char	*mark = d; /* remember where we are in dest buffer */
 
 	  /*

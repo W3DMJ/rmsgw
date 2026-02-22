@@ -57,7 +57,7 @@ char *active_configfile = NULL; /* the config file actually being used */
  * externs
  */
 extern int shm_debug;
-
+extern int setstatfile(char *statfile);
 
 /***
  *  dohelp()
